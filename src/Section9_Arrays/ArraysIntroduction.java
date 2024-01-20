@@ -2,7 +2,7 @@ package Section9_Arrays;
 
 import java.util.Arrays;
 
-public class Main {
+public class ArraysIntroduction {
 
     public static void main(String[] args) {
 
