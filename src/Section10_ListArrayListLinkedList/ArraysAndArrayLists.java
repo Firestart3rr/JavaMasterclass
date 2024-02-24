@@ -1,4 +1,4 @@
-package Section10_Collections;
+package Section10_ListArrayListLinkedList;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package Section10_Collections.ListAndArrayList;
+package Section10_ListArrayListLinkedList.ListAndArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
