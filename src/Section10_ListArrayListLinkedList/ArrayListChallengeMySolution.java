@@ -12,7 +12,7 @@ public class ArrayListChallengeMySolution {
         List<String> groceryList = new ArrayList<>();
 
         boolean flag = true;
-        while(flag) {
+        while (flag) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Available actions:");
             System.out.println("0 - to shutdown");
@@ -39,14 +39,14 @@ public class ArrayListChallengeMySolution {
                     printItems(groceryList);
                 }
             }
-            if("0".equals(action)) flag = false;
+            if ("0".equals(action)) flag = false;
         }
     }
 
     private static List<String> addItems(List<String> groceryList, String ipnut) {
         String[] splits = ipnut.toUpperCase().split(",");
         for (String split : splits) {
-            if(!groceryList.contains(split)) {
+            if (!groceryList.contains(split)) {
                 groceryList.add(split);
             }
         }
@@ -57,7 +57,7 @@ public class ArrayListChallengeMySolution {
     private static List<String> removeItems(List<String> groceryList, String ipnut) {
         String[] splits = ipnut.toUpperCase().split(",");
         for (String split : splits) {
-            if(groceryList.contains(split)) {
+            if (groceryList.contains(split)) {
                 groceryList.remove(split);
             }
         }
