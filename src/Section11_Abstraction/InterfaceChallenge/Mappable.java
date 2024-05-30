@@ -1,8 +1,11 @@
 package Section11_Abstraction.InterfaceChallenge;
 
 enum Geometry {LINE, POINT, POLYGON}
+
 enum Color {BLACK, BLUE, GREEN, ORANGE, RED}
+
 enum PointMarker {CIRCLE, PUSH_PIN, STAR, SQUARE, TRIANGLE}
+
 enum LineMarker {DASHED, DOTTED, SOLID}
 
 public interface Mappable {
@@ -11,7 +14,9 @@ public interface Mappable {
             "properties": {%s} """;
 
     String getLabel();
+
     Geometry getShape();
+
     String getMarker();
 
     default String toJSON() {
