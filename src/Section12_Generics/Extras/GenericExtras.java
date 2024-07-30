@@ -2,9 +2,19 @@ package Section12_Generics.Extras;
 
 import Section12_Generics.Extras.model.LPAStudent;
 import Section12_Generics.Extras.model.Student;
+import Section12_Generics.Extras.util.QueryItem;
+import Section12_Generics.Extras.util.QueryList;
 
 import java.util.ArrayList;
 import java.util.List;
+
+record Employee(String name) implements QueryItem {
+
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+        return false;
+    }
+}
 
 public class GenericExtras {
 
@@ -29,7 +39,20 @@ public class GenericExtras {
 
         testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
         testList(new ArrayList<Integer>(List.of(1, 2, 3)));
+
+
+        var queryList = new QueryList<>(lpaStudents);
+        var matches = queryList.getMatches(
+                "Course", "Python"
+        );
+        printMoreLists(matches);
+
+        var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
+        printMoreLists(students2021);
+
+//        QueryList<Employee> employeeList = new QueryList<>();
     }
+
 
 //    public static void testList(List<String> list) {
 //
