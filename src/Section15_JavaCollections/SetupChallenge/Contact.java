@@ -38,6 +38,10 @@ public class Contact {
         return name;
     }
 
+    public String getNameLastFirst() {
+        return name.substring(name.indexOf(" ") + 1) + ", " + name.substring(0, name.indexOf(" "));
+    }
+
     @Override
     public String toString() {
         return "%s: %s %s".formatted(name, emails, phones);
@@ -71,9 +75,9 @@ public class Contact {
 
     public void addEmail(String companyName) {
         String[] names = name.split(" ");
-        String email = "%c%s@%s.com".formatted(name.charAt(0), names[names.length -1],
+        String email = "%c%s@%s.com".formatted(name.charAt(0), names[names.length - 1],
                 companyName.replaceAll(" ", "").toLowerCase());
-        if(!emails.add(email)) {
+        if (!emails.add(email)) {
             System.out.println(name + " already has email " + email);
         } else {
             System.out.println(name + " now has email " + email);
@@ -81,7 +85,7 @@ public class Contact {
     }
 
     public void replaceEmailIfExists(String oldEmail, String newEmail) {
-        if(emails.contains(oldEmail)) {
+        if (emails.contains(oldEmail)) {
             emails.remove(oldEmail);
             emails.add(newEmail);
         }
