@@ -73,7 +73,7 @@ public class AdventureGame {
 
     private void visit(Location location) {
 
-        System.out.printf("*** You're stainding %s *** %n", location.description);
+        System.out.printf("*** You're standing %s *** %n", location.description);
         System.out.println("\tFrom here, you can see:");
 
         location.nextPlaces.forEach((k, v) -> {
